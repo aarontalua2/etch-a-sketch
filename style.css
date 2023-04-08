@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+header,
+footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  background: lightcyan;
+  height: 5%;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: purple;
+}
+
+footer {
+  background: grey;
+  height: 3%;
+}
+
+main {
+  background: rgb(202, 228, 236);
+  flex: auto;
+  flex-direction: column;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  height: 600px;
+  width: 600px;
+  flex-shrink: 0;
+  background: wheat;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filled {
+  background: black;
+}
+
+#sizeBtn {
+  margin-bottom: 2rem;
+  height: 2rem;
+  width: 5rem;
+}
