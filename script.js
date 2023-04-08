@@ -31,12 +31,6 @@ function changeGridSize(value) {
   fillGrid(size);
 }
 
-// Recursive prompt that rejects invalid input.
-function askSize() {
-  let newSize = prompt("Please select grid size (1-40)");
-  return isNaN(newSize) || +newSize > 40 || +newSize < 1 ? askSize() : newSize;
-}
-
 // Event Listeners
 
 // Hover effect
@@ -46,6 +40,14 @@ container.addEventListener("mouseover", function (e) {
 
 // Change size button
 sizeBtn.addEventListener("click", function (e) {
+  // Recursive prompt that rejects invalid input.
+  function askSize() {
+    let newSize = prompt("Please select grid size (1-40)");
+    return isNaN(newSize) || +newSize > 40 || +newSize < 1
+      ? askSize()
+      : newSize;
+  }
+
   size = askSize();
   changeGridSize(size);
   console.log(`Grid size changed to ${size}.`);
